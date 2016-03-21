@@ -1,0 +1,27 @@
+.one {
+    border: 1px solid black;
+    padding: 3em;
+    margin:  1em;
+    margin-bottom: 0em;
+}
+
+.two{
+     border: 1px solid black;
+     margin: 5em;
+     margin-top: 0em;
+}
+
+.three{
+    border: 1px solid black;
+    border-left: 2px solid black;
+    padding: 1em;
+    padding-top: 0em;
+    margin-top: 2em;
+    margin-bottom: 8em;
+}
+.four{
+    border-style: dashed ;
+    border-color: red;
+    border-width: 5px;
+    border-radius: 25px;
+}

@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, Verdana, sans-serif; background-color: yellow;
+}
+
+h1, h2 {
+    color: blue;
+    font-weight: bold;
+}
+ol,ul{
+    color: rgb(107,107,107);
+}
+
+figcaption{
+    font-size: small;
+}
+
+p,ol,ul{
+     text-indent: 20px;
+     font-weight: bold;
+}
+
+.copyright_notice {
+    font-size: 1.0em;
+}
+
+#special {
+    font-size: 0.8em;
+    color: yellowgreen;
+    font-style: italic;
+    border-left: 2px solid black;
+    margin-left: 40px;
+    padding-left: 10px;
+}
+
+p::first-letter {
+    font-size:8em;
+}
+
+p::first-line {
+    font-weight: bold;
+}

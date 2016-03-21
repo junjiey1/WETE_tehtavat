@@ -12,8 +12,13 @@ h1.alert {
 
 .alert {
     color: red;
+  
 }
 
-p#unique {
+#unique {
     font-size: 0.8em;
+}
+
+.alleviiva{
+    text-decoration: underline;
 }

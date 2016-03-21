@@ -1,0 +1,32 @@
+.otsikko{
+    font-size: 1.2em;
+}
+caption{
+     font-weight: bold;
+     font-size: 1.1em;
+     text-transform: uppercase;
+     border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+table {
+    border: 1px solid black;
+}
+.boldface{
+    font-weight: bold;
+}
+.color{
+    background-color: red;
+}
+.color2{
+     background-color: #dcdcdc;
+}
+#seina{
+    border-right: 2px solid gray;
+}
+.list_text{
+   padding-right: 10px;
+}
