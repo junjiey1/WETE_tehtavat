@@ -10,7 +10,7 @@ function calculate() {
 	var total;
     
     // Get references to the form values:
-    var quantity = document.getElementById('quantity').value;
+    var quantity = parseInt(document.getElementById('quantity').value);
     var price = document.getElementById('price').value;
     var tax = document.getElementById('tax').value;
     var discount = document.getElementById('discount').value;

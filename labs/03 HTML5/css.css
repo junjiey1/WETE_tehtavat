@@ -1,8 +1,23 @@
 body {
     font-family: Arial, Verdana, sans-serif;
     margin-left: 10px;
+    background-color: blue;
 }
 
-#one {
-    float: right;
+img{
+    float:left;
+}
+#two{
+    float:left;
+    -webkit-column-count:  3;
+     -webkit-column-gap: 50px;
+}
+figcaption{
+     float:left;
+}
+h1{
+    float:left
+}
+ul,il{
+    float:left;
 }

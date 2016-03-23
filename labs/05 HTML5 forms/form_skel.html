@@ -4,58 +4,97 @@
 	This page demonstrates a form.
 	-->
 	<head>
+		<link href="formcss.css" type="text/css" rel="stylesheet" />
 		<meta charset="utf-8"/>
 		<title>Demonstrating HTML forms</title>
 	</head>
 	
 	<body>
 		<h1>Turnitin</h1>
-		<form  lang="fi" action="">
+		<form  lang="fi" action="fi">
 			<div>
-				Name: <input type="text" name="studentname"/>
-			</div>
-			<div>
-				Student id: <input type="text" name="id"  />
-			</div>
-			<div>
+				<fieldset>
+					<legend>Student data</legend>
+				Name: 
+				<input type="text"  required title="Täyttä tämän kohta. Koko nimi." placeholder="student name" pattern="[a-zA-Z]+[ ][a-zA-Z]+.{4,}"  />
+				
+				<br>
+				
+		
+			
+				Student id: 
+				
+				<input type="number" name="id" required title="Täyttä tämän kohta. Vähintä 6 numeroinen numero." placeholder="Student ID" min="1000"  />
+				<br>
+			
 				Email:
 				<!--
 				Make an input named "email"
 				-->
-			</div>
-			<div>
+					<input type="email" name="email" required title="Muotoon etu.suku@mail.com" placeholder="Student email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+					
+					<br>
+    			
+    			
+    			</fieldset><br>
+				
+				<fieldset>
+					<legend>Assignment & code</legend>
 				Assignment:
 				<!--
 				Make an input named "assignment"
 				-->
-				
-			</div>
+				<input type="text" name="assignment" required title="Täyttä tämän kohta" placeholder="Which assignment" /><br>
 
-			<div>
+				
+	
 				Code:
 				<!--
 				Make an input named "code" which is a text area to put student's code into.
 				-->
 				
-			</div>
-			<div>
+				<textarea rows="4" cols="50" name="code" placeholder="assignment's code" ></textarea>
+				
+				<br>
+				</fieldset>
+				
+				
 				Cheat:
 			<!--
 				Make an input named "cheat" which is a check box the student must check.
 			-->
-			</div>
-			<div>
+			<form>
+			<br>	<label><input type = "checkbox" name ="cheat" value="cheat"> Cheat</label>
+			</form>
+			<br>
+			
 				Pay:
 			<!--
 				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
 			-->
-			</div>
-			<div>
+			<form>
+				<fieldset>
+					<legend> Credit Card</legend>
+				<input type = "radio" name ="payment" value="visa" checked> Visa <br>
+				<input type = "radio" name ="payment" value="paypal" > Paypal <br>
+				<input type = "radio" name ="payment" value="mastercard" > Mastercard <br>
+				</fieldset>
+			</form>
+		
 				Score:
 			<!--
 				Make an input named "score" which is a list of choices for the score 
 			-->
-			</div>
+			<from action ="">
+			<select name="score">
+				<option value="0">0</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>	
+				
+			</from><br>
+		
 			<input type="submit" />
 		</form>
 		<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>
