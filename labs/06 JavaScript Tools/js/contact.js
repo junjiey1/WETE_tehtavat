@@ -10,6 +10,7 @@ function process() {
     var okay = true;
     
     // Get form references:
+    var name = document.getElementById("name").value;
     var email = document.getElementById('email');
     var comments = document.getElementById('comments');
     // Validate the email address:
@@ -19,6 +20,24 @@ function process() {
         okay = false;
         alert('Please enter a valid email address!');
     }
+    
+    console.log("run");
+    
+    if(!name.length==0 && name.search(" ")!=-1){
+        if((name.indexOf(" ")!= (name.length=-1)) && (name.indexOf(" ")>=3 && name.indexOf(" ")<=100)){
+            okay=true;
+        }else{
+            okay=false;
+            alert("Please fill with full name!");
+        }
+    }else{
+        okay=false;
+        alert("Please fill with full name!");
+    }
+    console.log("lol");
+
+
+
 
     // Validate the comments:
     var maxLength = 100;
