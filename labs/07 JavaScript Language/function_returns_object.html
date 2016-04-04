@@ -4,12 +4,34 @@
   <meta charset="utf-8">
   <title>Object-o-matic</title>
   <script>
+  
+  function makeEngine(){
+  	var max_torque =[300, 400, 500];
+  	var fuel_type = ["Diesel", "petrol"];
+  	var cc_volume = [80,90,100];
+  	
+  	var rand1 = Math.floor(Math.random()* max_torque.length);
+  	var rand2 = Math.floor(Math.random()* fuel_type.length);
+  	var rand3 = Math.floor(Math.random()* cc_volume.length);
+  	
+  	var engine = {
+  		torque: max_torque[rand1],
+  		fuel: fuel_type[rand2],
+  		cc: cc_volume[rand3],
+  		
+  	};
+  	return engine;
+  	
+  }
+  
+  
 	function makeCar() {
 		var makes = ["Chevy", "GM", "Fiat", "Webville Motors", "Tucker"];
 		var models = ["Cadillac", "500", "Bel-Air", "Taxi", "Torpedo"];
 		var years = [1955, 1957, 1948, 1954, 1961];
 		var colors = ["red", "blue", "tan", "yellow", "white"];
 		var convertible = [true, false];
+
 
 		var rand1 = Math.floor(Math.random() * makes.length);
 		var rand2 = Math.floor(Math.random() * models.length);
@@ -25,13 +47,14 @@
 			color: colors[rand4],
 			passengers: rand5,
 			convertible: convertible[rand6],
+			engine: makeEngine(),
 			mileage: 0
 		};
 		return car;
 	}
 
 	function displayCar(car) {
-		console.log("Your new car is a " + car.year + " " + car.make + " " + car.model);
+		console.log("Your new car is a " + car.year + " " + car.make + " " + car.model + " "+ car.engine.cc + " " + car.engine.fuel + " "+ car.engine.torque);
 	}
 
 	var carToSell = makeCar();
