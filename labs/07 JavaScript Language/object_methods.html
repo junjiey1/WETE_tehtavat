@@ -30,9 +30,9 @@ var fiat = {
 
 	drive: function() {
 		
-		var	updateFuel  = function(){
+	var updateFuel = function(){
 			this.fuel = this.fuel - 1;
-	};
+		};
 	console.log(this.fuel+ "***********************'");
 		
 		if (this.started) {
@@ -40,7 +40,7 @@ var fiat = {
 				console.log(this.make + " " +
 				      this.model + " goes zoom zoom!");
 			
-			updateFuel;
+				updateFuel;
 			} else {
 				console.log("Uh oh, out of fuel.");
 				this.stop();
@@ -56,6 +56,10 @@ var fiat = {
 		this.fuel = this.fuel + amount;
 		console.log(this.fuel+ "----------");
 	},
+	
+	updateFuel : function(){
+			this.fuel = this.fuel - 1;
+		},
 
 };
 

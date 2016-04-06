@@ -29,9 +29,18 @@ function handleClick(e) {
 	alert("You clicked on " + target.id);
 }
 
+function Mouseover(x){
+	alert("You mouse is over " + x.id);
+}
   </script>
 </head>
 <body>
+	
 <span id="clickme">Click me!</span>
+
+<div id = 'text' onmouseover = "Mouseover(this)">
+	<p>Mouse over</p>
+</div>
+
 </body>
 </html>

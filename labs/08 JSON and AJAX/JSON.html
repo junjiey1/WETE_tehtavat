@@ -9,17 +9,39 @@ var fidoString = '{ "name": "Fido", "breed": "Mixed", "weight": 38 }';
 var fido = JSON.parse(fidoString);
 console.log("We have made a dog out of a string! " + fido.name);
 
+window.onload = init;
+	function init() {
+var employee = {
+    name: { first: "Colin",
+            second: "Stephen" },
+    title: "Assistant Lecturer"
+}
 
-var fido2 = {
-	name: "Fido",
-	breed: "Mixed",
-	weight: 38
-};
-var fidoString = JSON.stringify(fido2);
-console.log("We made a string from a dog! " + fidoString);
+
+var employeeString = document.createTextNode(JSON.stringify(employee));
+var para = document.createElement("p");
+para.appendChild(employeeString);
+document.getElementById("ensi").appendChild(para);
+
+var emp2 =JSON.parse(document.getElementById("ensi").getElementsByTagName("p")[0].innerHTML);
+emp2.name.first ="Ben";
+emp2.name.second = "Yin";
+
+employeeString = document.createTextNode(JSON.stringify(emp2));
+para = document.createElement("p");
+para.appendChild(employeeString);
+document.getElementById("toinen").appendChild(para);
+
+}
+
 
   </script>
 </head>
 <body>
+    <div id="ensi">
+    </div>
+    
+    <div id="toinen">
+    </div>
 </body>
 </html>
