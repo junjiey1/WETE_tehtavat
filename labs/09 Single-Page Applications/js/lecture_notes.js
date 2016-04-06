@@ -8,23 +8,47 @@ if (window.location.hash == '#add' || notes.length === 0) {
 } else {
 	document.getElementById('addPage').style.display = 'none';
 }
+function Note(title, note){
+	this.title=title;
+	this.note=note;
+}
 
 document.querySelector('#addPage button').onclick = function() {
 	console.log('add note');
 	var title = document.querySelector('#addPage input').value;
 	var note = document.querySelector('#addPage textarea').value;
+	document.querySelector('#addPage textarea').value='';
+	document.querySelector('#addPage input').value='';
+	var Store_Note = new Note(title,note);
+	notes.push(Store_Note);
+	console.log(notes.length + ' ' + Store_Note.title);
+	console.log(notes[0].title);
+	loadList();
 };
 
 /*
  * handles navigation between the add and edit 'screens'
  */ 
 document.querySelector('nav > ul > li:nth-child(1)').onclick = function() {
+	document.getElementById('editPage').style.display = 'none';
+	document.getElementById('addPage').style.display = 'block';
 	console.log('first link clicked');
 };
 
 document.querySelector('nav > ul > li:nth-child(2)').onclick = function() {
 	console.log('second link clicked');
+	document.getElementById('editPage').style.display = 'block';
+	document.getElementById('addPage').style.display = 'none';
 };
+
+document.querySelector('#editPage input').onkeyup = function(){
+	updateNote();
+	loadList();
+}
+document.querySelector('#editPage textarea').onkeyup = function(){
+	updateNote();
+	loadList();
+}
 
 
 function updateNote() {
