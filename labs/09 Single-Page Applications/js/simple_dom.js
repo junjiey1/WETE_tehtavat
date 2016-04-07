@@ -1,37 +1,24 @@
 //console.log('page loaded');
 
 console.log(document);
-
-//document.getElementById('save').onclick = save;
-//document.querySelector('#userForm input[type="email"]').onkeypress = function() {
-var evet = function(){
-	console.log('updating email');
-	var email = document.querySelector('#userForm input[type="email"]').value;
-	document.querySelector('#summary p').innerHTML = email;
+var event = function() {
+console.log('updating email');
+var email = document.querySelector('#userForm input[type="email"]').value;
+var name = document.querySelector('#userForm input[type="text"]').value;
+var pass = document.querySelector('#userForm input[type="password"]').value;
+var toShow = (name + ' : ' + email + ' : ' + pass);
+console.log(name);
+document.querySelector('#summary h1').innerHTML = toShow;
+var paragraphs = document.querySelectorAll('#summary p');
+paragraphs[1].innerHTML = 'Hello World!';
+paragraphs[0].innerHTML = 'found '+paragraphs.length+' p tags';
 };
 
+var inputs = document.getElementById("userForm").querySelectorAll("input");
 
-function save() {
-	console.log('save');
-	// get a DOM object representing a form field.
-	var name = document.querySelector('#userForm input[type="text"]').value;
-	var pass = document.querySelecstor('#userForm input[type="password"]').value;
-	var email = document.querySelector('#userForm input[type= "email"]').value;
-	var toShow = (name + ': ' + email + ': ' + pass);
-	console.log(name);
-//	document.querySelector('#summary h1').innerHTML = name.value;
-//	var data = document.querySelectorAll('#userForm input');
-//	console.log(data);
-document.querySelector('#Ssummary h1').innerHTML = toShow;
-	var paragraphs = document.querySelectorAll('#summary p');
-	//console.log('found '+paragraphs.length+' p tags');
-	paragraphs[1].innerHTML = 'Hello World!';
-	
-	paragraphs[1].innerHTML = 'found '+paragraphs.length+' p tags';
-};
-
-var input = document.getElementById("userForm").querySelectorAll("input");
-
-for (var i=0; i<input.length; i++){
-	input[i].onkeyip =event;
+for (var i=0; i<inputs.length;i++){
+inputs[i].onkeyup = event;
 }
+
+
+

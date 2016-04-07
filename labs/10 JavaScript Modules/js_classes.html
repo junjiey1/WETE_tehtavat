@@ -5,6 +5,31 @@
 <title>Coffee Constructor</title>
 <script>
 
+function Tea(type,ounces){
+	this.type=type;
+	this.ounces=ounces;
+	this.getSteepTime = function(){
+		var time = undefined;
+		switch(this.type){
+			case "green":
+				time = 3;
+				break;
+			case "black":
+				time = 4;
+				break;
+			case "white":
+				time = 2;
+				break;
+			default:
+				time = 6;
+		}
+		return time;
+	};
+	this.order = function(){
+		var msg = ('You ordered ' + this.type + ' tea, amount of ' + this.ounces + ' ounces. Your order will be ready in ' + this.getSteepTime() + ' minutes');
+		return msg;
+	};
+}
 function Coffee(roast, ounces) {
 	this.roast = roast;
 	this.ounces = ounces;
@@ -33,6 +58,14 @@ function Coffee(roast, ounces) {
 	};
 }
 
+Tea.prototype.sip = function(){
+	console.log('Hmm. Tasty.');
+}
+
+	Coffee.prototype.sip = function(){
+	console.log('Hmm. Tasty.');
+}
+
 var coffee = new Coffee("House Blend", 12);
 console.log(coffee.order());
 
@@ -41,6 +74,11 @@ console.log(darkRoast.order());
 
 var specialBlend = new Coffee("Special Blend", 200);
 console.log(specialBlend.order());
++specialBlend.sip();
+
+var greentea = new Tea("green" , 10);
+console.log(greentea.order());
+greentea.sip();
 
 </script>
 </head>
