@@ -31,26 +31,25 @@ $a[] = "Ellen";
 $a[] = "Valtti";
 $a[] = "Vihtori";
 
+$json_list= array();
+$fname = "firstname";
+
 // get the q parameter from URL
 $q = $_REQUEST["q"];
 
-$hint = "";
-
-// lookup all hints from array if $q is different from "" 
-if ($q !== "") {
+    $json_list= array();
+    $fname = "firstname";
+    foreach($a as $name){
     $q = strtolower($q);
     $len=strlen($q);
-    foreach($a as $name) {
-        if (stristr($q, substr($name, 0, $len))) {
-            if ($hint === "") {
-                $hint = $name;
-            } else {
-                $hint .= ", $name";
-            }
-        }
+
+        if ((stristr($q, substr($name, 0, $len))) && count($json_list)<=0) {
+        $json_list[$fname]=" $name";
     }
 }
 
-// Output "no suggestion" if no hint was found or output correct values 
-echo $hint === "" ? "no suggestion" : $hint;
+if(count($json_list)<=0){
+    $json_list[$fname]=" no suggestion available";
+}
+    print_r(json_encode($json_list));
 ?>

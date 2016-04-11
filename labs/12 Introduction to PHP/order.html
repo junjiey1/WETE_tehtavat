@@ -31,15 +31,17 @@ function ajaxFunction(){
 		}
 	}
 	ajaxRequest.open("GET", "php/serverTime.php", true);
-	ajaxRequest.send(null); 
+	ajaxRequest.send();
 }
 
 
 </script>
 
 <form name='myForm'>
-Name: <input type='text' onChange="ajaxFunction();" name='username' /> <br />
+
+Name: <input type='text' name='username' /> <br />
 Time: <input type='text' name='time' />
+<button type="button" onClick="ajaxFunction();">Click me</button>
 
 </form>
 </body>
