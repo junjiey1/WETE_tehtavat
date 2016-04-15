@@ -20,6 +20,7 @@ for ($i = 1; $i<=$throws; $i++) {
     $res = $dice->cast();
     $results[] = array('id' => strval($i), 'res' => strval($res));
 }
+
 $freqs = array();
 for ($i = 1; $i<=$faces; $i++) {
     $freqs[] = array ('eyes' => strval($i), 'frequency' => strval($dice->getFreq($i)));
