@@ -15,6 +15,7 @@ class Dice {
             $this->x = 0;        }
     }
     
+    
     public function cast() {
         $this->heitot++;
      if($this->x==0){
@@ -28,6 +29,7 @@ class Dice {
                 $res = mt_rand(1,($this->faces-1));
             }
         }
+        
         $this->freqs[$res]++;
         return $res;
     }

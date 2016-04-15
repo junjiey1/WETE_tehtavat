@@ -9,6 +9,7 @@ class Physicaldice extends Dice{
         echo(' this dice is made of ' .$material. ' ');
     }
 
+
 public function getMaterial(){
         return $this->material;
     }
