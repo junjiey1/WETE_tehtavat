@@ -1,5 +1,5 @@
 <?php
- $s = "Look at this. <p>text</p> \"<b onmouseover=alert('hello')>This is an example</b>\"";
+ $s = "Mouseover <p>text</p> \"<b onmouseover=alert('hello')>Here</b>\"";
     $b = strip_tags($s, "<b>"); //allow tag b
     $r = htmlentities($b);
     echo $b;
