@@ -27,6 +27,7 @@ for ($i = 1; $i<=$faces; $i++) {
     $freqs[] = array ('eyes' => strval($i), 'frequency' => strval($dice->getFreq($i)));
 }
 
+echo("Die average " . $dice->getAvg());
 
 echo json_encode(array('faces'=>$faces,'results'=>$results,'frequencies'=>$freqs));
 

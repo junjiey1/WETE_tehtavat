@@ -5,23 +5,49 @@
     <title>geogram</title>
   </head>
   <body>
-      
-  <!-- call a Javascript function to send an XMLHttpRequest -->
-  
-  <form action="/geogram.php" method="get">
-    <input type="text" name="location"/>
-    <button type="submit">Submit</button>
-  </form>
-    <br/>
     
  <!-- make a Javascript callback to handle the request when it arrives -->
+ <script>
  
-    <?php
-    if(!empty($instagram_array)){
-      foreach($instagram_array['data'] as $key=>$image){
-        echo '<img src="'.$image['images']['low_resolution']['url'].'" alt=""/><br/>';
-      }
-    }
-    ?>
+   function makeSearch() {
+    var ajaxRequest;  // The variable that makes Ajax possible!
+
+try{
+// Opera 8.0+, Firefox, Safari
+ajaxRequest = new XMLHttpRequest();
+} catch (e){
+// Internet Explorer Browsers
+try{
+ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+} catch (e) {
+try{
+ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+} catch (e){
+// Something went wrong
+alert("Your browser broke!");
+return false;
+}
+}
+}
+// Create a function that will receive data sent from the server
+ajaxRequest.onreadystatechange = function(){
+if(ajaxRequest.readyState == 4){
+console.log('vastaus '+ajaxRequest.responseText);
+document.getElementById("response").innerHTML = 'coordinates ' + JSON.parse(ajaxRequest.responseText).coords;
+}
+}
+ajaxRequest.open("GET", "php/geogram.php?q=" +document.getElementById("location").value, true);
+ajaxRequest.send(); 
+}
+ </script>
+ <!-- call a Javascript function to send an XMLHttpRequest -->
+  
+  <form>
+    <input type="text" name="location" id="location"/>
+    <button type="button" id="cli" onclick="makeSearch()">Submit</button>
+    <div id="response"></div>
+  </form>
+    <br/>
+ 
   </body>
 </html>
